@@ -1,0 +1,42 @@
+baseURL: ''
+title: macka.cc
+disableKinds:
+  - section
+  - taxonomy
+  - term
+timeout: 300s
+params:
+  plausible_domain: ''
+  gallerydeluxe:
+    shuffle: true
+    reverse: true
+    enable_exif: true
+caches:
+  images:
+    dir: ':cacheDir/mackacc'
+    maxAge: 4320h
+imaging:
+  resampleFilter: catmullRom
+  quality: 90
+  anchor: Smart
+  exif:
+    disableDate: true
+    disableLatLong: true
+    includeFields: Artist|LensModel|FNumber|ExposureTime
+server:
+  headers:
+    - for: /**
+      values:
+        Referrer-Policy: strict-origin-when-cross-origin
+module:
+  mounts:
+    - source: assets
+      target: assets
+    - source: layouts
+      target: layouts
+    - source: content
+      target: content
+    - source: static
+      target: static
+  imports:
+    - path: github.com/bep/gallerydeluxe
