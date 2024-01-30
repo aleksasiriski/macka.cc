@@ -15,11 +15,17 @@
 
 <section
 	id="images"
-	class="gap-0 columns-2 sm:columns-3 md:columns-4 lg:columns-5 xl:columns-6 2xl:columns-8 border dark:border-black"
+	class="gap-0 columns-2 sm:columns-3 md:columns-4 lg:columns-5 xl:columns-6 2xl:columns-8"
 >
 	{#each images as src, i (src.img.src)}
 		<a href={`/image/${getIdFromUrl(src.img.src)}`}>
-			<Img id="img-{i}" class="h-auto w-full" {src} alt="" loading="lazy" />
+			<Img
+				id="img-{i}"
+				class="h-auto w-full border dark:border-black"
+				{src}
+				alt=""
+				loading="lazy"
+			/>
 		</a>
 	{/each}
 </section>
