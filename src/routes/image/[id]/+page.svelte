@@ -11,6 +11,6 @@
 		id="img-{id}"
 		class="max-h-full w-full px-1 py-1 sm:px-5 sm:py-5 md:px-10 md:py-10 lg:px-16 lg:py-16 xl:px-20 xl:py-20"
 		src={setIdIntoUrl(id)}
-		alt="cat-{id}"
+		alt=""
 	/>
 </div>

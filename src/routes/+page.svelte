@@ -13,15 +13,13 @@
 	};
 </script>
 
-<ul class="flex flex-wrap">
+<section
+	id="images"
+	class="gap-0 columns-2 sm:columns-3 md:columns-4 lg:columns-5 xl:columns-6 2xl:columns-8 border dark:border-black"
+>
 	{#each images as src, i (src.img.src)}
-		<li
-			id="li-{i}"
-			class="h-auto w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 2xl:w-1/12 border dark:border-black"
-		>
-			<a href={`/image/${getIdFromUrl(src.img.src)}`}>
-				<Img id="img-{i}" class="h-full w-full" {src} alt="" loading="lazy" />
-			</a>
-		</li>
+		<a href={`/image/${getIdFromUrl(src.img.src)}`}>
+			<Img id="img-{i}" class="h-auto w-full" {src} alt="" loading="lazy" />
+		</a>
 	{/each}
-</ul>
+</section>
